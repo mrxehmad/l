@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Tracking PNG</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+        #trackedImage {
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <img id="trackedImage" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjL0kZanLwzuOdNIokPTwMbrvymQqFwSGgsQRU4__zi51P5VENnHZDtxFlo80K0mMU7KITt--xq5rxj6_2BY-DXLzIpPUGH-ibK64QoVm2kbqkc0c-u1JH1mp9APPInewisPrxkoMOrAiKrvof_h0iiwS8LZ7J5DCneKGZzxNeJ6jWg4aXaM8LQp96ElhpM/s64/lund.png" alt="Tracked Image">
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var trackedImage = document.getElementById("trackedImage");
+            
+            document.addEventListener("mousemove", function (event) {
+                var mouseX = event.clientX;
+                var mouseY = event.clientY;
+                
+                // Adjust the position of the image to match the mouse position
+                trackedImage.style.left = mouseX + "px";
+                trackedImage.style.top = mouseY + "px";
+            });
+        });
+    </script>
+</body>
+</html>
